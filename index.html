@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toro Inoue AI Homework Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="game">
+
+    <!-- MUSIC -->
+    <audio id="bgMusic" loop>
+      <source src="assets/background.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- TOP LEFT BUTTONS -->
+    <div class="top-buttons">
+      <button id="muteBtn">🔊 Mute</button>
+      <button id="resetBtn">↺ Reset</button>
+    </div>
+
+    <!-- HOME SCREEN -->
+    <section class="screen active" id="homeScreen">
+      <img src="assets/home.png" alt="Toro home screen" class="background home-bg" />
+
+      <button id="playBtn" class="play-btn">Play</button>
+
+      <!-- click area over Toro -->
+      <div id="catHotspot" class="cat-hotspot hidden"></div>
+
+      <div id="clickHint" class="click-hint hidden">
+        Click Toro to start
+      </div>
+    </section>
+
+    <!-- ZOOMED HOMEWORK SCREEN -->
+    <section class="screen" id="talkScreen">
+      <img src="assets/home.png" alt="Zoomed Toro scene" class="background zoom-bg" />
+
+      <div class="overlay"></div>
+
+      <div class="dialogue-area">
+        <img id="toroSprite" src="assets/happy.png" alt="Toro sprite" class="sprite" />
+
+        <div class="speech-box" id="speechBox">
+          Hi! Can you help me with my homework?
+        </div>
+      </div>
+
+      <div class="level-options">
+        <button class="level-btn" data-level="1">Level 1</button>
+        <button class="level-btn" data-level="2">Level 2</button>
+        <button class="level-btn" data-level="3">Level 3</button>
+        <button class="level-btn" data-level="4">Level 4</button>
+        <button class="level-btn" data-level="5">Level 5</button>
+      </div>
+
+      <div class="challenge-box hidden" id="challengeBox">
+        <h2 id="challengeTitle">Level 1</h2>
+        <p id="challengePrompt"></p>
+
+        <textarea id="answerInput" placeholder="Type your answer here..."></textarea>
+
+        <div class="challenge-buttons">
+          <button id="checkBtn">Check</button>
+          <button id="hintBtn">Hint</button>
+          <button id="aiBtn">Use AI</button>
+        </div>
+
+        <div id="feedback" class="feedback"></div>
+      </div>
+    </section>
+
+    <!-- FINAL SCREEN -->
+    <section class="screen" id="endScreen">
+      <img src="assets/class.jpg" alt="Ending scene" class="background" />
+
+      <div class="ending-box">
+        <h1>You did it!</h1>
+        <p>
+          Toro passed his class thanks to your help and learned that AI should be used as a tool, not relied on for everything.
+        </p>
+        <button id="playAgainBtn">Play Again</button>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
